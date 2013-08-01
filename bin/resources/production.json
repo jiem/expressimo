@@ -1,0 +1,41 @@
+{
+
+  "port": 8080,
+    
+  "view engine": "{{template}}",    
+  
+  "mongo": {
+    "db": "prod_db",    
+    "user": "guest",
+    "password": "123456",
+    "host": "ds031567.mongolab.com",
+    "port": 31567
+  },
+  
+  "use": {        
+    
+    "logger": {"format": "default", "file": "access.log"},        
+    
+    "json": true,
+    
+    "urlencoded": true,
+    
+    "cookieParser": {"secretFile" : "session.secret"},
+        
+    "methodOverride": true,
+    
+    "session": {"store": "mongo"},
+        
+    "favicon": {"path": "public/favicon.ico"},  
+    
+    "auth": {"login": "/login", "ignore": "static"},
+    
+    "router":  {"routeFile": "routes", "cache": true},  
+    
+    "static": true,
+    
+    "errorHandler": true    
+    
+  }
+  
+}

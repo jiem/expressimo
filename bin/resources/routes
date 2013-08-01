@@ -1,0 +1,2 @@
+GET/capital/:country -> controllers/capital.js
+GET+POST/login -> controllers/login.js
