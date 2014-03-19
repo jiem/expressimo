@@ -138,8 +138,8 @@ In a controller, call a model with the `$` global function:
 To render the view `user.html` in the controller `user.js`
 
     //controller/user.js
-    exports.controller = function(req, res, user) {
-      res.render(user);
+    exports.controller = function(req, res) {
+      res.render({name: 'John Doe'});
     }
 
     //view/user.html
