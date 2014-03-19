@@ -14,7 +14,7 @@ function main() {
   var project = options.project;
   
   if (!project || options.help) {
-    console.log('Usage: injection [appname]');
+    console.log('Usage: expressimo [appname]');
   } else if (options.version) {
     console.log(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version);
   } else if (fs.existsSync(project)) {
