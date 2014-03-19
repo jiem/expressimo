@@ -117,9 +117,9 @@ For example, init your redis connection:
       ...
     }
 
-## Link controllers to models
+## Link controllers to models and views
 
-In a controller, call a model with the `$` global variable:
+In a controller, call a model with the `$` global function:
 
     //controller/user.js
     exports.controller = function(req, res) {
@@ -134,25 +134,6 @@ In a controller, call a model with the `$` global variable:
         callback(user);
       });
     }
-
-Or you can do it by creating a getter for the `user` argument:
-
-    //controller/user.js
-    exports.controller = function(req, res, user) {
-      res.send('Hello ' + user.name);
-    }
-
-    exports.getUser = function(req, callback) {
-      $.user.get(req.params.id, callback);
-    }
-
-    //model/user.js
-    exports.get = function(id, Return) {
-      db.user.findOne({id: id}, function(err, user) {
-        Return(user);
-      });
-    }
-
 
 To render the view `user.html` in the controller `user.js`
 
